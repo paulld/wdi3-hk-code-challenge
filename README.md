@@ -19,7 +19,7 @@ Using Coffeescript, write a function to return the string "true" if str, where s
 ## Challenge: Second Best and Worst
 Using Coffeescript, take the array of numbers stored in arr, where arr is an array, and return the second lowest and second greatest numbers, respectively, separated by a space. 
 ##### (10 points)
-##### Example: arr = [7, 7, 12, 98, 106]
+##### Example: arr = [17, 7, 12, 98, 106]
 ##### Expected result: 12 98
 
 ## Challenge: Find the Numbers
