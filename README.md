@@ -40,16 +40,24 @@ Using Coffeescript, take the array of numbers stored in arr, where arr is an arr
 ##### Expected result: 12 98
 
 	seconds = (arr) ->
-  		numSort = (a,b) ->
-    		a - b
-  		sortedArray = arr.sort(numSort)
-  		secondWorst = sortedArray[1]
-  		secondBest = sortedArray[sortedArray.length - 2]
-  		secondWorst, secondBest
+		numSort = (a,b) ->
+			a - b
+		total = arr.length
+		secondLow = (array) ->
+	    		array = array.sort(numSort)
+	    		for i in [0..total]
+				if array[i] > array[0]
+					return array[i]
+		secondHigh = (array) ->
+			array = array.sort(numSort).reverse()
+			for i in [0..total]
+				if array[i] < array[0]
+					return array[i]
+		console.log "The second lowest is #{secondLow arr}
+		and the second highest is #{secondHigh arr}"
+	
+	seconds [1,10,2,1,10,8,11,100,102,102]
 
-
-	console.log array = [17, 7, 12, 98, 106]
-	seconds(array)
 
 ## Challenge: Find the Numbers
 Using Coffeescript, take str, where str is a string, and search for all the numbers in the string, add them together, then return that final number divided by the total amount of letters in the string (rounded to the nearest whole number). Only single digit numbers separated by spaces will be used throughout the whole string (So this won't ever be the case: hello44444 world). Each string will also have at least one letter.
