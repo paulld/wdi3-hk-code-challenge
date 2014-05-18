@@ -25,13 +25,13 @@ Using Coffeescript, write a function to return the string "true" if str, where s
 ##### Expected result: "false"
 
 	palindrome = (string) ->
-  		if string.toLowerCase().split("") is string.toLowerCase.split("").reverse
-    		"true"
+  		if string.toLowerCase() is string.toLowerCase().split('').reverse().join('')
+	    		console.log "\"#{string}\" is a palindrome!"
   		else
-    		"false"
+	    		console.log "\"#{string}\" is a NOT palindrome"
 
-	console.log palindrome("racecar")
-	console.log palindrome("chipmunk")
+	palindrome("Racecar")
+	palindrome("chipmunk")
 
 ## Challenge: Second Best and Worst
 Using Coffeescript, take the array of numbers stored in arr, where arr is an array, and return the second lowest and second greatest numbers, respectively, separated by a space. 
@@ -91,11 +91,10 @@ Using Coffeescript, write a summerTree function that creates a tree with the num
 ####*****
 
 	summerTree = (levels) ->
+  		stars = ''
   		for level in [1..levels]
-    		stars = ''
-    		for n in [1..level]
-      			stars = stars + '*'
-    		console.log stars
+      			stars += '*'
+    			console.log stars
 
 	summerTree(5)
 
@@ -104,6 +103,19 @@ Using Coffeescript,write a bubbleSort function to sort arr, where arr is an arra
 #####(25 points)
 ##### Example: arr = [98, 734, 7, 3, 5, 29, 10, 87, 33, 54, 72, 461]
 ##### Expected Result: [3, 5, 7, 10, 29, 33, 54, 72, 87, 98, 461, 734]
+
+	bubbleSort = (arr) ->
+		for y in [0..arr.length-2]
+			y =+ 1
+			for i in [0..arr.length-2]
+				if arr[i] > arr[i+1]
+					temp = arr[i+1]
+					arr[i+1] = arr[i]
+					arr[i] = temp
+		console.log arr
+
+bubbleSort [98, 734, 7, 3, 5, 29, 10, 87, 33, 54, 72, 461]
+bubbleSort [99, 99, 99, 99, 99, 98, 97, 96, 95, 94, 93, 92, 91, 90, 89, 88, 87, 86, 85]
 
 
 ## Challenge: Fibonacci
