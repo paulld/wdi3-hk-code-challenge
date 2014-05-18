@@ -25,10 +25,10 @@ Using Coffeescript, write a function to return the string "true" if str, where s
 ##### Expected result: "false"
 
 	palindrome = (string) ->
-  		if string.toLowerCase() is string.toLowerCase().split('').reverse().join('')
-	    		console.log "\"#{string}\" is a palindrome!"
-  		else
-	    		console.log "\"#{string}\" is a NOT palindrome"
+  	  if string.toLowerCase() is string.toLowerCase().split('').reverse().join('')
+	    console.log "\"#{string}\" is a palindrome!"
+  	  else
+	    console.log "\"#{string}\" is a NOT palindrome"
 
 	palindrome("Racecar")
 	palindrome("chipmunk")
@@ -40,21 +40,21 @@ Using Coffeescript, take the array of numbers stored in arr, where arr is an arr
 ##### Expected result: 12 98
 
 	seconds = (arr) ->
-		numSort = (a,b) ->
-			a - b
-		total = arr.length
-		secondLow = (array) ->
-	    		array = array.sort(numSort)
-	    		for i in [0..total]
-				if array[i] > array[0]
-					return array[i]
-		secondHigh = (array) ->
-			array = array.sort(numSort).reverse()
-			for i in [0..total]
-				if array[i] < array[0]
-					return array[i]
-		console.log "The second lowest is #{secondLow arr}
-		and the second highest is #{secondHigh arr}"
+	  numSort = (a,b) ->
+	    a - b
+	  total = arr.length
+	  secondLow = (array) ->
+	    array = array.sort(numSort)
+	    for i in [0..total]
+	      if array[i] > array[0]
+	        return array[i]
+	  secondHigh = (array) ->
+	    array = array.sort(numSort).reverse()
+	    for i in [0..total]
+	      if array[i] < array[0]
+	        return array[i]
+	  console.log "The second lowest is #{secondLow arr}
+	  and the second highest is #{secondHigh arr}"
 	
 	seconds [1,10,2,1,10,8,11,100,102,102]
 
@@ -91,10 +91,10 @@ Using Coffeescript, write a summerTree function that creates a tree with the num
 ####*****
 
 	summerTree = (levels) ->
-  		stars = ''
-  		for level in [1..levels]
-      			stars += '*'
-    			console.log stars
+  	  stars = ''
+  	  for level in [1..levels]
+      	    stars += '*'
+    	    console.log stars
 
 	summerTree(5)
 
@@ -105,17 +105,17 @@ Using Coffeescript,write a bubbleSort function to sort arr, where arr is an arra
 ##### Expected Result: [3, 5, 7, 10, 29, 33, 54, 72, 87, 98, 461, 734]
 
 	bubbleSort = (arr) ->
-		for y in [0..arr.length-2]
-			y =+ 1
-			for i in [0..arr.length-2]
-				if arr[i] > arr[i+1]
-					temp = arr[i+1]
-					arr[i+1] = arr[i]
-					arr[i] = temp
-		console.log arr
+	  for y in [0..arr.length-2]
+	    y =+ 1
+	    for i in [0..arr.length-2]
+	      if arr[i] > arr[i+1]
+	        temp = arr[i+1]
+	        arr[i+1] = arr[i]
+	        arr[i] = temp
+	  console.log arr
 
-bubbleSort [98, 734, 7, 3, 5, 29, 10, 87, 33, 54, 72, 461]
-bubbleSort [99, 99, 99, 99, 99, 98, 97, 96, 95, 94, 93, 92, 91, 90, 89, 88, 87, 86, 85]
+	bubbleSort [98, 734, 7, 3, 5, 29, 10, 87, 33, 54, 72, 461]
+	bubbleSort [99, 99, 99, 99, 99, 98, 97, 96, 95, 94, 93, 92, 91, 90, 89, 88, 87, 86, 85]
 
 
 ## Challenge: Fibonacci
